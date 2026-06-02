@@ -1,0 +1,105 @@
+server:
+
+theme:
+  background-color: 240 21 15
+  contrast-multiplier: 1.2
+  primary-color: 217 92 83
+  positive-color: 115 54 76
+  negative-color: 347 70 65
+
+pages:
+  - name: Home
+    head-widgets:
+      - type: bookmarks
+        groups:
+          - title: General
+            links:
+              - title: Naver
+                url: https://www.naver.com/
+                icon: https://www.naver.com/favicon.ico
+              - title: YouTube
+                url: https://www.youtube.com/
+                icon: di:youtube
+              - title: Chzzk
+                url: https://chzzk.naver.com/
+                icon: https://chzzk.naver.com/favicon.ico
+          - title: Dev
+            links:
+              - title: GitHub
+                url: https://github.com/
+                icon: https://github.com/favicon.ico
+              - title: DevDocs
+                url: https://devdocs.io/
+                icon: https://devdocs.io/favicon.ico
+          - title: Self-Hosted
+            links:
+              - title: Helper Scripts
+                url: https://community-scripts.github.io/ProxmoxVE/
+                icon: di:proxmox
+              - title: Awesome Self-Hosted
+                url: https://github.com/awesome-selfhosted/awesome-selfhosted
+                icon: https://github.com/favicon.ico
+          - title: AI / Tools
+            links:
+              - title: Gemini
+                url: https://gemini.google.com
+                icon: https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg
+              - title: Claude
+                url: https://claude.ai/
+                icon: https://claude.ai/favicon.ico
+              - title: Notion
+                url: https://www.notion.so/
+                icon: https://www.notion.so/images/favicon.ico
+
+    columns:
+      - size: small
+        widgets:
+          - type: weather
+            location: Seoul, South Korea
+            units: metric
+            hour-format: 24h
+            cache: 30m
+
+          - type: markets
+            cache: 10m
+            markets:
+              - symbol: SPY
+                name: S&P 500
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: 005930.KS
+                name: 삼성전자
+
+      - size: full
+        widgets:
+          - type: search
+            autofocus: true
+            search-engine: google
+
+          - type: group
+            widgets:
+              - type: rss
+                title: GeekNews
+                cache: 1h
+                feeds:
+                  - url: https://feeds.feedburner.com/geeknews-feed
+              - type: rss
+                title: 서버포럼
+                cache: 1h
+                feeds:
+                  - url: https://svrforum.com/rss
+              - type: rss
+                title: Eric-Na
+                cache: 24h
+                feeds:
+                  - url: https://ericna.pages.dev/index.xml
+
+          - type: videos
+            cache: 1h
+            channels:
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+              - UCdUcjkyZtf-1WJyPPiETF1g # 잇섭
+              - UCdpbqw5DPdBfaeByMF2Re0g # 없섭
