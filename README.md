@@ -10,6 +10,9 @@
 > 개인 학습·운영용 홈랩입니다. 구성 과정에서 공식 문서와 AI 도구의 도움을 활용했고, 생성된 설정은 직접 검증·수정해 적용했습니다.
 > 이 저장소는 실제 운영 중인 홈랩에서 인프라 코어와 immich 등 일부 서비스만 발췌해 공개한 것으로, 전체 구성의 일부입니다.
 
+> [!IMPORTANT]
+> **2026-06-02 스냅샷입니다.** 그 뒤 호스트 RAM이 모자라 클러스터를 컨트롤플레인 1대 + 워커 4대(5노드, HA 아님)로 줄였습니다. 아래 8노드 HA 구성은 당시 기준이고, 줄인 경위는 블로그 [K3s 노드 축소](https://blog.jw-oh.xyz/HomeLab/K3s-노드-축소)에 있습니다.
+
 ## 구성 개요
 
 ### 인프라 기반 계층
@@ -21,7 +24,7 @@
 - **자동화**: Terraform(VM 프로비저닝) + Ansible(OS·노드 구성) IaC
 
 ### 그 위의 컨테이너 오케스트레이션 계층
-- **클러스터**: K3s HA — Server 3대(embedded etcd) + Worker 5대, 총 8노드, kube-vip API VIP
+- **클러스터**(스냅샷 당시): K3s HA — Server 3대(embedded etcd) + Worker 5대, 총 8노드, kube-vip API VIP → 현재 5노드, HA 아님
 - **CNI**: Cilium — Pod 네트워크 + LoadBalancer IP를 OPNsense에 BGP로 광고
 - **스토리지/인그레스/배포**: Longhorn 분산 블록 스토리지, Envoy Gateway(Gateway API), ArgoCD GitOps
 
